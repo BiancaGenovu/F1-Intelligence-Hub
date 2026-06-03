@@ -21,3 +21,8 @@ secrets.py
 # OS
 .DS_Store
 Thumbs.db
+
+cache/
+*.mp4
+*.sqlite
+repomix-output.xml
