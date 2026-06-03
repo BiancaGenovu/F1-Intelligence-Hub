@@ -1,0 +1,41 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="175dp"
+    android:height="100dp"
+    android:viewportWidth="175"
+    android:viewportHeight="100">
+
+    <!-- ══ GLOW STRAT 1 — cel mai difuz, opacitate mica ══ -->
+    <path android:strokeColor="#18FF4D2E" android:strokeWidth="34" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M18,10 L18,90"/>
+    <path android:strokeColor="#18FF4D2E" android:strokeWidth="34" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M18,10 L70,10"/>
+    <path android:strokeColor="#18FF4D2E" android:strokeWidth="34" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M18,50 L60,50"/>
+    <path android:strokeColor="#18FF4D2E" android:strokeWidth="34" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M105,10 L122,10"/>
+    <path android:strokeColor="#18FF4D2E" android:strokeWidth="34" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M122,10 L122,90"/>
+    <path android:strokeColor="#18FF4D2E" android:strokeWidth="34" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M108,90 L136,90"/>
+
+    <!-- ══ GLOW STRAT 2 — mijloc ══ -->
+    <path android:strokeColor="#28FF4D2E" android:strokeWidth="26" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M18,10 L18,90"/>
+    <path android:strokeColor="#28FF4D2E" android:strokeWidth="26" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M18,10 L70,10"/>
+    <path android:strokeColor="#28FF4D2E" android:strokeWidth="26" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M18,50 L60,50"/>
+    <path android:strokeColor="#28FF4D2E" android:strokeWidth="26" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M105,10 L122,10"/>
+    <path android:strokeColor="#28FF4D2E" android:strokeWidth="26" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M122,10 L122,90"/>
+    <path android:strokeColor="#28FF4D2E" android:strokeWidth="26" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M108,90 L136,90"/>
+
+    <!-- ══ GLOW STRAT 3 — aproape de linie ══ -->
+    <path android:strokeColor="#40E10600" android:strokeWidth="22" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M18,10 L18,90"/>
+    <path android:strokeColor="#40E10600" android:strokeWidth="22" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M18,10 L70,10"/>
+    <path android:strokeColor="#40E10600" android:strokeWidth="22" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M18,50 L60,50"/>
+    <path android:strokeColor="#40E10600" android:strokeWidth="22" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M105,10 L122,10"/>
+    <path android:strokeColor="#40E10600" android:strokeWidth="22" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M122,10 L122,90"/>
+    <path android:strokeColor="#40E10600" android:strokeWidth="22" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="@android:color/transparent" android:pathData="M108,90 L136,90"/>
+
+    <!-- ══ F — principal, drepte ══ -->
+    <path android:strokeColor="#E10600" android:strokeWidth="20" android:strokeLineCap="square" android:strokeLineJoin="miter" android:fillColor="@android:color/transparent" android:pathData="M18,10 L18,90"/>
+    <path android:strokeColor="#E10600" android:strokeWidth="20" android:strokeLineCap="square" android:strokeLineJoin="miter" android:fillColor="@android:color/transparent" android:pathData="M18,10 L70,10"/>
+    <path android:strokeColor="#E10600" android:strokeWidth="20" android:strokeLineCap="square" android:strokeLineJoin="miter" android:fillColor="@android:color/transparent" android:pathData="M18,50 L60,50"/>
+
+    <!-- ══ 1 — principal, drepte ══ -->
+    <path android:strokeColor="#E10600" android:strokeWidth="20" android:strokeLineCap="square" android:strokeLineJoin="miter" android:fillColor="@android:color/transparent" android:pathData="M105,10 L122,10"/>
+    <path android:strokeColor="#E10600" android:strokeWidth="20" android:strokeLineCap="square" android:strokeLineJoin="miter" android:fillColor="@android:color/transparent" android:pathData="M122,10 L122,90"/>
+    <path android:strokeColor="#E10600" android:strokeWidth="20" android:strokeLineCap="square" android:strokeLineJoin="miter" android:fillColor="@android:color/transparent" android:pathData="M108,90 L136,90"/>
+
+</vector>

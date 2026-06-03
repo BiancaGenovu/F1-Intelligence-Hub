@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">F1Predictor</string>
+    <string name="start_engine" />
+    <string name="nu_ai_cont_nregistreaz_te" />
+    <string name="parol" />
+    <string name="adres_email" />
+    <string name="predictor_engine" />
+    <string name="f1">\n</string>
+</resources>

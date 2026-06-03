@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "984899918456",
+    "project_id": "f1predictornew2",
+    "storage_bucket": "f1predictornew2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984899918456:android:34fe65b541807f7cfe6b8d",
+        "android_client_info": {
+          "package_name": "com.example.f1predictor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-kxibbaHJ3FArz_EVQ8xdMgkIe9ZTIg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

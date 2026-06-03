@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080810">
+
+    <View
+        android:id="@+id/speedLine"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="@drawable/bg_speed_line"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/speedLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- ── HEADER ─────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnBack"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:text="← ÎNAPOI"
+                    android:textColor="#7070A0"
+                    android:textSize="11sp"
+                    android:background="@drawable/bg_logout_btn"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SIMULARE CURSĂ"
+                    android:textColor="#E10600"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:shadowColor="#FF4D2E"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="8"/>
+
+                <View android:layout_width="80dp" android:layout_height="38dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/bg_speed_line"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- ── CIRCUIT ─────────────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CIRCUIT"
+                android:textColor="#60607A"
+                android:textSize="9sp"
+                android:letterSpacing="0.2"
+                android:layout_marginBottom="6dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerCircuiteGrid"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_spinner_dark"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:spinnerMode="dropdown"/>
+
+            <!-- ── VREME ───────────────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VREME"
+                android:textColor="#60607A"
+                android:textSize="9sp"
+                android:letterSpacing="0.2"
+                android:layout_marginBottom="6dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerVremeGrid"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_spinner_dark"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:spinnerMode="dropdown"/>
+
+            <!-- ── CONFIGURARE GRILA ──────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CONFIGURARE GRILĂ (1-20)"
+                    android:textColor="#60607A"
+                    android:textSize="9sp"
+                    android:letterSpacing="0.2"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnClearGrid"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="ALEGE TU"
+                    android:textColor="#7070A0"
+                    android:textSize="10sp"
+                    android:background="@drawable/bg_logout_btn"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:layout_marginEnd="6dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRandomGrid"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="🎲 RANDOM"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:background="@drawable/bg_btn_primary"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"/>
+            </LinearLayout>
+
+            <!-- ── LISTA PILOTI ────────────────────────────── -->
+            <LinearLayout
+                android:id="@+id/containerPiloti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_result_card"
+                android:padding="12dp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- ── MOTOR AI ────────────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MOTOR COMENTARIU AI"
+                android:textColor="#60607A"
+                android:textSize="9sp"
+                android:letterSpacing="0.2"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroupLLM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <RadioButton
+                    android:id="@+id/radioOllama"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_weight="1"
+                    android:text="🤖 Ollama"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:checked="true"
+                    android:background="@drawable/radio_llm_selector"
+                    android:layout_marginEnd="6dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioGemini"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_weight="1"
+                    android:text="✨ Gemini"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:background="@drawable/radio_llm_selector"/>
+            </RadioGroup>
+
+            <!-- ── BUTON SIMULARE ─────────────────────────── -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSimulateRace"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="🏁 START SIMULARE CURSĂ"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:letterSpacing="0.1"
+                android:background="@drawable/bg_btn_primary"
+                android:layout_marginBottom="16dp"/>
+
+            <ProgressBar
+                android:id="@+id/progressRace"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:indeterminateTint="#E10600"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- ══════════════════════════════════════════════
+                 REZULTATE CONTAINER
+            ══════════════════════════════════════════════ -->
+            <LinearLayout
+                android:id="@+id/containerResultsButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- ── PODIUM ──────────────────────────────── -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:weightSum="3">
+
+                    <!-- P2 — Argint (stanga) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_podium_silver"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="12dp">
+
+                        <!-- Bara top argint -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:background="#A0A0B0"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2"
+                                android:textColor="#C0C0D0"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:fontFamily="monospace"/>
+
+                            <TextView
+                                android:id="@+id/tvPodium2Name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="—"
+                                android:textColor="#E8E8F0"
+                                android:textSize="9sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:letterSpacing="0.02"/>
+
+                            <TextView
+                                android:id="@+id/tvPodium2Team"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#60607A"
+                                android:textSize="8sp"
+                                android:gravity="center"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- P1 — Aur (centru, mai inalt) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_podium_gold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp">
+
+                        <!-- Bara top aur -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:background="#FFD700"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="#FFD700"
+                                android:textSize="36sp"
+                                android:textStyle="bold"
+                                android:fontFamily="monospace"
+                                android:shadowColor="#FFD700"
+                                android:shadowDx="0"
+                                android:shadowDy="0"
+                                android:shadowRadius="10"/>
+
+                            <TextView
+                                android:id="@+id/tvPodium1Name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="—"
+                                android:textColor="#E8E8F0"
+                                android:textSize="9sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:letterSpacing="0.02"/>
+
+                            <TextView
+                                android:id="@+id/tvPodium1Team"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#60607A"
+                                android:textSize="8sp"
+                                android:gravity="center"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- P3 — Bronz (dreapta) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_podium_bronze"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="12dp">
+
+                        <!-- Bara top bronz -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:background="#CD7F32"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3"
+                                android:textColor="#CD7F32"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:fontFamily="monospace"/>
+
+                            <TextView
+                                android:id="@+id/tvPodium3Name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="—"
+                                android:textColor="#E8E8F0"
+                                android:textSize="9sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:letterSpacing="0.02"/>
+
+                            <TextView
+                                android:id="@+id/tvPodium3Team"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#60607A"
+                                android:textSize="8sp"
+                                android:gravity="center"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- ── ACTION BUTTONS ──────────────────────── -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_result_card"
+                    android:padding="16dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnShowTable"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="🏆  CLASAMENT COMPLET"
+                        android:textColor="#E8E8F0"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.05"
+                        android:background="@drawable/bg_logout_btn"
+                        android:layout_marginBottom="8dp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnShowGif"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="🎬  ANIMAȚIE CURSĂ"
+                        android:textColor="#E8E8F0"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.05"
+                        android:background="@drawable/bg_logout_btn"
+                        android:layout_marginBottom="8dp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnShowCommentary"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="🎙️  COMENTARIU SPORTIV"
+                        android:textColor="#E8E8F0"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.05"
+                        android:background="@drawable/bg_logout_btn"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

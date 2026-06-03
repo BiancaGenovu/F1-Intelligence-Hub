@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080810">
+
+    <View
+        android:id="@+id/speedLine"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="@drawable/bg_speed_line"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/speedLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- ── HEADER ─────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnBack"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:text="← ÎNAPOI"
+                    android:textColor="#7070A0"
+                    android:textSize="11sp"
+                    android:background="@drawable/bg_logout_btn"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⚔️ DUEL TELEMETRIC"
+                        android:textColor="#E10600"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace"
+                        android:shadowColor="#FF4D2E"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="8"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Analiză Comparativă Sectoare"
+                        android:textColor="#60607A"
+                        android:textSize="10sp"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <View android:layout_width="80dp" android:layout_height="38dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/bg_speed_line"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- ── CIRCUIT ─────────────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CIRCUIT"
+                android:textColor="#60607A"
+                android:textSize="9sp"
+                android:letterSpacing="0.2"
+                android:layout_marginBottom="6dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerCircuit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_spinner_dark"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:spinnerMode="dropdown"/>
+
+            <!-- ── PILOTI: TU vs RIVAL ─────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="20dp">
+
+                <!-- Pilotul tau -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PRIMUL PILOT"
+                        android:textColor="#00D2BE"
+                        android:textSize="9sp"
+                        android:letterSpacing="0.2"
+                        android:layout_marginBottom="6dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerYou"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_spinner_dark"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:spinnerMode="dropdown"/>
+                </LinearLayout>
+
+                <!-- Rivalul -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AL DOILEA PILOT"
+                        android:textColor="#E10600"
+                        android:textSize="9sp"
+                        android:letterSpacing="0.2"
+                        android:layout_marginBottom="6dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerRival"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_spinner_dark"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:spinnerMode="dropdown"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ── MOTOR AI ────────────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MOTOR COMENTARIU AI"
+                android:textColor="#60607A"
+                android:textSize="9sp"
+                android:letterSpacing="0.2"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroupLLM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <RadioButton
+                    android:id="@+id/radioOllama"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_weight="1"
+                    android:text="🤖 Ollama"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:checked="true"
+                    android:background="@drawable/radio_llm_selector"
+                    android:layout_marginEnd="6dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioGemini"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_weight="1"
+                    android:text="✨ Gemini"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:background="@drawable/radio_llm_selector"/>
+            </RadioGroup>
+
+            <!-- ── BUTON COMPARA ──────────────────────────── -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCompare"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="⚡ COMPARĂ TELEMETRIA"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:letterSpacing="0.1"
+                android:background="@drawable/bg_btn_primary"
+                android:layout_marginBottom="16dp"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:indeterminateTint="#E10600"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- ══════════════════════════════════════════════
+                 CONTAINER REZULTATE
+            ══════════════════════════════════════════════ -->
+            <LinearLayout
+                android:id="@+id/resultsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- ── WINNER BANNER ──────────────────────── -->
+                <TextView
+                    android:id="@+id/tvWinnerBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:padding="16dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- ── CARD SECTOARE ──────────────────────── -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_result_card"
+                    android:padding="16dp"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📊  COMPARAȚIE PE SECTOARE"
+                        android:textColor="#E8E8F0"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.05"
+                        android:layout_marginBottom="20dp"/>
+
+                    <!-- ── SECTOR 1 ────────────────────────── -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="S1"
+                            android:textColor="#60607A"
+                            android:textSize="9sp"
+                            android:letterSpacing="0.1"
+                            android:minWidth="24dp"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="10dp"
+                            android:background="#2A2A45"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PRIMUL PILOT"
+                            android:textColor="#00D2BE"
+                            android:textSize="8sp"
+                            android:minWidth="20dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="100"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="4dp">
+
+                            <View
+                                android:id="@+id/barYouS1"
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:layout_weight="50"
+                                android:background="#00D2BE"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtYouS1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#00D2BE"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:minWidth="52dp"
+                            android:gravity="end"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="2dp">
+
+                        <View android:layout_width="24dp" android:layout_height="1dp"/>
+                        <View android:layout_width="1dp" android:layout_height="1dp" android:layout_marginStart="6dp" android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AL DOILEA PILOT"
+                            android:textColor="#E10600"
+                            android:textSize="8sp"
+                            android:minWidth="20dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="100"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="4dp">
+
+                            <View
+                                android:id="@+id/barRivalS1"
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:layout_weight="50"
+                                android:background="#E10600"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtRivalS1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#E10600"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:minWidth="52dp"
+                            android:gravity="end"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/diffS1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewEnd"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1E1E35"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- ── SECTOR 2 ────────────────────────── -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="S2"
+                            android:textColor="#60607A"
+                            android:textSize="9sp"
+                            android:letterSpacing="0.1"
+                            android:minWidth="24dp"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="10dp"
+                            android:background="#2A2A45"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PRIMUL PILOT"
+                            android:textColor="#00D2BE"
+                            android:textSize="8sp"
+                            android:minWidth="20dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="100"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="4dp">
+
+                            <View
+                                android:id="@+id/barYouS2"
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:layout_weight="50"
+                                android:background="#00D2BE"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtYouS2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#00D2BE"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:minWidth="52dp"
+                            android:gravity="end"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="2dp">
+
+                        <View android:layout_width="24dp" android:layout_height="1dp"/>
+                        <View android:layout_width="1dp" android:layout_height="1dp" android:layout_marginStart="6dp" android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AL DOILEA PILOT"
+                            android:textColor="#E10600"
+                            android:textSize="8sp"
+                            android:minWidth="20dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="100"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="4dp">
+
+                            <View
+                                android:id="@+id/barRivalS2"
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:layout_weight="50"
+                                android:background="#E10600"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtRivalS2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#E10600"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:minWidth="52dp"
+                            android:gravity="end"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/diffS2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewEnd"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1E1E35"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- ── SECTOR 3 ────────────────────────── -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="S3"
+                            android:textColor="#60607A"
+                            android:textSize="9sp"
+                            android:letterSpacing="0.1"
+                            android:minWidth="24dp"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="10dp"
+                            android:background="#2A2A45"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PRIMUL PILOT"
+                            android:textColor="#00D2BE"
+                            android:textSize="8sp"
+                            android:minWidth="20dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="100"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="4dp">
+
+                            <View
+                                android:id="@+id/barYouS3"
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:layout_weight="50"
+                                android:background="#00D2BE"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtYouS3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#00D2BE"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:minWidth="52dp"
+                            android:gravity="end"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="2dp">
+
+                        <View android:layout_width="24dp" android:layout_height="1dp"/>
+                        <View android:layout_width="1dp" android:layout_height="1dp" android:layout_marginStart="6dp" android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AL DOILEA PILOT"
+                            android:textColor="#E10600"
+                            android:textSize="8sp"
+                            android:minWidth="20dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="100"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="4dp">
+
+                            <View
+                                android:id="@+id/barRivalS3"
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:layout_weight="50"
+                                android:background="#E10600"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtRivalS3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#E10600"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:minWidth="52dp"
+                            android:gravity="end"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/diffS3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewEnd"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Divider final -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1E1E35"
+                        android:layout_marginBottom="14dp"/>
+
+                    <!-- ── BUTON COMENTARIU ─────────────────── -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnShowCommentary"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="🎙️  ANALIZĂ TELEMETRICĂ AI"
+                        android:textColor="#E8E8F0"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.05"
+                        android:background="@drawable/bg_logout_btn"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
