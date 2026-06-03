@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+env/
+
+# Model ML - fisier mare, nu il incarcam
+model_f1.json
+
+# Chei API si date sensibile
+*.key
+secrets.py
+
+# Date Excel mari
+*.xlsx
+*.csv
+
+# OS
+.DS_Store
+Thumbs.db
